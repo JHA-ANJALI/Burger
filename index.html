@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Burger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+
+        *{
+            padding:0px;
+            margin:0px;
+
+        }
+        html, body {
+    overflow-x: hidden; /* Hides horizontal overflow */
+     /* Hides vertical overflow (optional) */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+        main{
+            overflow: hidden;
+        }
+        navbar{
+            width: 100%;
+            height: 100px;;
+            background-color:none;
+            position:absolute;
+            z-index:1;
+            /* background-image: url("decoration-bg-2.png"); */
+            display:flex;
+            z-index: 999;
+        }
+
+        .logo{
+            height: 80px;
+            width:80px;
+            margin: 10px 80px;
+        }
+        .nav1{
+            color:white;
+            display: flex;           
+        }
+        .a{
+            padding: 50px 10px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 16px;
+            
+        }
+        .nav2{
+            position: absolute;
+            width:250px;
+            height:80px;
+            /* background-color: aqua; */
+            left:1250px;
+            display: flex;
+            align-items: center;
+            right:100px;
+            
+        }
+        .menu{
+            color:black;
+            margin:0px 20px;   
+            font-size: 22px;;
+ 
+        }
+        .container{
+            height:790px;
+            width:100%;
+            background-color:rgb(255, 184, 54);
+            position: relative;
+            overflow:hidden;
+        }   
+        .circle1{
+            width:620px;
+            height:550px;
+            position:absolute;
+            top:-200px;
+            left:1000px;     
+        } 
+        .circle2{
+            width:620px;
+            height:550px;
+            position:absolute;
+            bottom:-200px;
+            left:550px;     
+        } 
+        .burger{
+            position: absolute;
+            left:850px;
+            top:180px;
+            width:550px;
+            height:450px;
+        } 
+
+        .crown{
+            position: absolute;
+            left:1200px;
+            top:100px;
+        }
+        .dc1{
+            position: absolute;
+            top:-80px;
+            left:740px;   
+            animation:myani 10s infinite linear
+         }
+         .dc2{
+            position: absolute;
+            top:670px;
+            left:1280px;
+            animation:myani 10s infinite linear
+            
+         }
+         @keyframes myani{
+            100%{transform: rotate(360deg);}
+         }
+         .ul
+         {
+            position: absolute;
+            left: 920px;
+            top:180px
+         }
+         .ull{
+            position: absolute;
+            left: 870px;
+            top:330px
+         }
+         .nl{
+            position: absolute;
+            left: 1320px;
+            top:600px;
+         }
+         .nll{
+            position: absolute;
+            left: 1370px;
+            top:320px;
+         }
+         .sc{
+            position: absolute;
+            left:860px;
+            top:280px;
+
+         }
+         .mc{
+            position: absolute;
+            left:1410px;
+            top:110px;  
+         }
+         .lc{
+            position: absolute;
+            left:980px;
+            top:40px;
+         }
+         .sc1{
+            position: absolute;
+            left:1420px;
+            top:490px;
+         }
+         .mc1{
+            position: absolute;
+            left:850px;
+            top:570px;
+         }
+         .lc1{
+            position: absolute;
+            left:870px;
+            top:700px;
+
+         }
+        .bg{
+            position: absolute;
+            width:57%;
+            height:800px;
+            background-color: none;
+            background-image: url("decoration-bg-1.png");
+            background-size: 100% 100%;
+            color: white;
+            z-index: 998;
+        }
+        .fp{
+            position: absolute;
+            top:150px;
+            left:90px;
+            height:500px;
+            width:630px;
+            /* outline: solid; */
+         }
+        .p1{
+            padding:10px 0px 40px 0px;
+            font-family: poppins;
+        }
+        .fp h1{
+            font-family: poppins;
+            font-size: 40px;
+        }
+        .iconlists{
+            display: flex;
+            margin:35px 0px;
+            width:630px;
+            height:150px;
+            /* background-color: purple; */
+        }
+        .icons{
+            width:180px;
+            height:150px;
+            margin:0px 30px 0px 0px;
+            /* background-color: pink; */
+        }
+        .icon{
+            width:110px;
+            height:90px;
+            /* background-color: blue; */
+        }
+        .icon i{
+           font-size: 70px;
+           /* color:rgb(255, 184, 54); */
+           /* color:#eee; */
+           color: whitesmoke;
+          
+        }
+        .iconp{
+            width:190px;
+            height:60px;
+            /* background-color: yellow;   */
+        }
+        .iconp p{
+            font-size: 16px;
+            padding:5px 0px;
+            font-family: poppins;
+            color:yellow
+        }
+        .btn{
+            width: 180px;
+            height: 60px;
+            background-color:#FC4100;
+            font-weight: bold;
+            font-family: poppins;
+            font-size: 18px;
+            color:white;
+            border: none;
+
+        }
+        .arrow{
+            color:white;
+            margin:0px 10px;
+        }
+        .container1{
+            width:100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .container1 p{          
+            text-align: center;
+            margin:100px 0px 0px 0px;
+            font-weight: bold;
+            font-size: 20px;;
+        }
+        .head{
+            width:1000px;
+            height:200px;
+            /* background-color: red; */
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+        .head h1{
+            text-align: center;
+            font-size: 50px;     
+        }
+        .container2{
+            width:85%;
+            margin:auto;
+            /* background-color: aqua; */
+            display: flex;
+        }
+        .burgerss{
+            width:300px;
+            height: 400px;
+            margin:0px 20px 0px 0px;
+            /* background-color: palegreen; */
+            display: flex;
+            flex-direction: column;
+
+        }
+        .burgerss:hover{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .burgerpics{
+            width:300px;
+            height: 300px;
+            /* background-color: yellowgreen; */
+        }
+
+        .burgerpics img{
+            width:300px;
+            height: 300px;
+        }
+        .burgerpara{
+            width:300px;
+            height: 100px;
+            /* background-color: palevioletred; */
+            text-align: center; 
+        }
+        .burgerpara p{
+            font-size: 16px;
+            font-weight: bold;
+            padding:5px;
+        }
+        .grey{
+            color: grey;
+        }
+        .n{
+            margin: 20px;;
+            margin-left: 40%;
+        }
+        .container3{
+            width:100%;
+            margin:auto;
+            /* background-color: yellow; */
+        }
+        .box{
+            width:85%;
+            margin:auto;
+            /* background-color: violet; */
+            
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .one{
+            width:550px;
+            height: 800px;
+            /* background-color: gray;          */
+        }
+        .one img{
+            width:100%;
+            height: 100%;
+        }
+        .two{
+            width:600px;
+            height: 900px;
+            margin-left: 100px;
+            /* background-color: purple; */
+            display: flex;
+            flex-direction: column;
+        }
+        .two1{
+            width:100%;
+            height: 400px;
+            /* background-color: whitesmoke; */
+        }
+        .two1 p{
+            padding-top: 10px;
+            padding-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .two1 h1{
+            padding-bottom: 30px;
+            font-size: 40px;
+            font-family: Impact,;
+
+        }
+        .two1 span{
+            font-size: 18px;
+            color: grey;
+        }
+        .two2{
+            width:100%;
+            height: 400px;
+            margin-top: 85px;
+            /* background-color: red; */
+
+        }
+        .two2 img{
+            width:100%;
+            height:100%;
+        }
+        .three{
+            width:100%;
+            height: 140px;
+            margin-top: 50px;;
+            /* background-color: rgb(16, 1, 16); */
+            display: flex;
+        }
+        .ic1{
+            width:160px;
+            height: 90px;
+            /* background-color: aqua; */
+            margin-right: 60px;
+        }
+        .ic1 img{
+            width:100%;
+            height:100%;
+        }
+        .container4{
+            width:100%;
+            height: 1000px;
+            background-color: #FC4100;
+            display: flex;
+        }
+        .bigbox{
+            width:50%;
+            height: 100%;
+            background-color: brown;
+        }
+        .bigbox img{
+            width:120%;
+            height: 100%;
+        }
+        .smallbox{
+
+            width:50%;
+            height: 100%;
+            background-color: blue;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .smallbox1{
+            width:50%;
+            height: 50%;
+            background-color: orange;
+            /* outline: solid; */
+        }
+        .smallbox1 img{
+            width: 120%;
+            height: 100%;
+        }
+
+        .container5{
+            width: 100%;
+            background-color:rgb(255, 184, 54);
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        /* .pic1{
+            width:100%;
+            height: 1000px;
+            background-color:rgb(255, 184, 54);
+        } */
+        /* .bgpic{
+            width: 100%;
+            height: 100%;
+        }
+        .whitepic{
+            width:300px;
+            height:200px;
+            margin-top:-400px;
+        } */
+        /* .up{
+            top
+        }
+        .pic2{
+            width:40%;
+            height: 500px;
+            background-color: green;
+            margin-left: 100px;
+        } */
+        /* .pic2 img{
+            width: 100%;
+            height: 100%;
+
+        }
+        .pic3{
+            width:40%;
+            height: 500px;
+            background-color: greenyellow;
+        } */
+
+        /* .cir{
+
+        }
+        .dcir{
+
+        } */
+         .bigback{
+            width:100%;
+            height:1000px;
+            background-image: url("https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decoration-bg-4.png");
+            background-size: 100% 100%;
+         }
+         .whitepicup{
+            position: absolute;
+            top:100px;
+            left:-150px;
+            z-index:4;
+         }
+         .whitepicupp{
+            position: absolute;
+            top:60px;
+            left:1300px;
+            z-index:4;
+         }
+         .whitepicleft{
+            position: absolute;
+            top:720px;
+            left:-50px;
+            z-index:4;
+
+         }
+         .whitepicright{
+            position: absolute;
+            top:700px;
+            left:1350px;
+            z-index:4;
+
+         }
+         .whitepicmiddle{
+            position: absolute;
+            top:730px;
+            left:700px;
+            z-index:4;
+
+         }
+
+
+         .bigbacks{
+            width: 80%;
+            height:700px;
+            margin-left:10%;
+            margin-top: 100px;
+            /* background-color: #FC4100; */
+            display: flex;
+            flex-wrap: wrap;
+         }
+         .bigback1{
+            width: 100%;
+            height: 200px;
+            /* background-color: blanchedalmond;      */
+         }
+         .bbp{
+            font-weight: bold;
+            font-family: oswald;
+            color:white;
+            text-align: center;
+
+         }
+         .bbh{
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 50px;;
+            color:white;
+            margin-top: 30px;;
+            text-align: center;
+
+         }
+         
+         .bigback2{
+            width:50%;
+            height:500px;
+            /* background-color: palegreen; */
+            
+        }
+        .bigback3{
+            width:50%;
+            height:500px;
+            /* background-color: yellow; */
+        }
+        .ppp{
+            padding:20px;
+            color:white;
+            font-size: 24px;;
+            font-weight: bold;
+        }
+        .spannn{
+            padding:20px;
+            color:grey;
+            font-size: 16px;;
+
+        }
+         .smallback{
+            width:100%;
+            height:700px;
+            /* background-color: aquamarine; */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+         }
+         .smallback1{
+            width:55%;
+            height:650px;
+            /* background-color: palegreen; */
+
+         }
+         .smallback2{
+            width:38%;
+            height:650px;
+            background-color: yellow;
+         }
+         .cir{
+            position: absolute;
+            top:280px;
+            left:-130px;
+            height:500px;
+
+         }
+         .cir1{
+            position: absolute;
+            top:10px;
+            left:1250px;
+            height:450px;
+            width: 400px;
+            height: 400px;
+         }
+         .dcir{
+            position: absolute;
+            top:360px;
+            left:-70px;
+            height:200px;
+            z-index: 6;
+         }
+         .dcir1{
+            position: absolute;
+            top:300px;
+            left:1200px;
+            width: 400px;
+            height: 400px;
+            z-index: 6;
+
+         }
+         .mine{
+            width: 800px;
+            height: 650px;
+            margin-left: 20px;
+            margin-top: 10px;
+            z-index: 999;
+
+         }
+
+         .container6{
+            width:100%;
+            height:700px;
+            background-color: yellow;
+
+         }
+         .container6 img{
+            width:100%;
+            height:100%;
+         }
+         .container7{
+            width:100%;
+            height:600px;
+            background-color: purple;
+            display: flex;
+            flex-direction: column;
+
+         }
+         .letter{
+            width:100%;
+            height:100px;
+            display: flex;
+            padding:30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+         }
+
+
+
+
+
+
+
+        
+     
+
+
+
+
+
+        
+
+        
+        
+
+
+
+
+        @media(max-width:600px){
+
+
+            navbar{
+            width: 100%;
+            height: 80px;
+            background-color:none;
+            display:flex;
+        }
+
+        .logo{
+            height:65px;
+            width:65px;
+            margin: 10px 15px;
+        }
+        .nav1{
+            color:white;
+            display: flex;
+            
+        }
+        .a{
+            visibility: hidden;
+        }
+        .nav2{
+            position: absolute;
+            width:200px;
+            height:80px;
+            /* background-color: aqua; */
+            left:300px;
+            display: flex;
+            align-items: center;
+            right:100px;
+            
+        }
+        .menu{
+            color:black;
+            margin:0px 15px;   
+            font-size: 15px;;
+ 
+        }
+            .container{
+            height:1100px;
+            width:100%;
+            background-color:rgb(255, 184, 54);
+        }
+        .circle1{
+            width:200px;
+            height:300px;
+            position:absolute;
+            top:-100px;
+            left:300px;     
+        }
+        .circle2{
+            width:200px;
+            height:300px;
+            position:absolute;
+            top:200px;
+            left:-50px;     
+        }
+        .burger{
+            position: absolute;
+            left:100px;
+            top:100px;
+            width:250px;
+            height:200px;
+            z-index: 99;
+        } 
+         .crown{
+            position: absolute;
+            left:200px;
+            top:60px;
+            width:80px;
+            height:80px;
+        }
+        .dc1{
+            position: absolute;
+            width:300px;
+            height:170px;
+            left: -200px;
+            top:-100px  
+         }
+         .dc2{
+            position: absolute;
+            width:300px;
+            height:240px;
+            top:300px;
+            left:250px;
+            
+         }
+         .ul
+         {
+            position: absolute;
+            left: 115px;
+            top:112px;
+            width:80px;
+            height:60px;
+         }
+         .ull{
+            position: absolute;
+            left: 50px;
+            top:260px;
+            width:50px;
+            height:25px;
+         }
+         .nl{
+            position: absolute;
+            left: 270px;
+            top:250px;
+            width:80px;
+            height:50px;
+         }
+         .nll{
+            position: absolute;
+            left: 330px;
+            top:150px;
+         }
+         .sc{
+            position: absolute;
+            left:860px;
+            top:280px;
+
+         }
+         .mc{
+            position: absolute;
+            left:1410px;
+            top:110px;  
+         }
+         .lc{
+            position: absolute;
+            left:980px;
+            top:40px;
+         }
+         .sc1{
+            position: absolute;
+            left:1420px;
+            top:490px;
+         }
+         .mc1{
+            position: absolute;
+            left:850px;
+            top:570px;
+         }
+         .lc1{
+            position: absolute;
+            left:870px;
+            top:700px;
+
+         }
+        .bg{
+            width: 100%;
+            height:800px;
+            position: absolute;
+            top:400px;   
+            background-image: url("https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decoration-bg-5.png"); 
+        }
+        .fp{
+            top:10px;
+            left:10px;
+            width:95%;      
+            height:650px;
+            /* outline: none; */
+
+         }
+        .p1{
+            font-family: poppins;
+            padding:15px 0px;
+        }
+        .fp h1{
+            padding:0px 0px;
+            font-family: poppins;
+            font-size: 28px;
+        }
+        .iconlists{
+            display: flex;
+            flex-direction: column;
+            margin:35px 0px;
+            width:390px;
+            height:410px;
+            /* background-color: purple; */
+        }
+        .icons{
+            width:330px;
+            height:150px;
+            margin:0px 0px 40px 0px;
+            /* background-color: pink; */
+        }
+        .icon{
+            width:110px;
+            height:70px;
+            /* background-color: blue; */
+        }
+        .iconp{
+            width:350px;
+            height:40px;
+            /* background-color: yellow;   */
+        }
+        .iconp p{
+            padding:5px 0px;
+            font-size: 14px;
+            font-family: poppins;
+            color:yellow
+        }
+        .btn{
+            width: 150px;
+            height: 50px;
+            background-color:red;
+            font-weight: bold;
+            font-family: poppins;
+            font-size: 14px;
+            color:white;
+
+        }  
+        .container1 p{          
+            text-align: center;
+            margin:80px 0px 0px 0px;
+            font-weight: bold;
+            font-size: 14px;;
+        }
+        .head{
+            width:420px;
+            height:80px;
+            /* background-color: red; */
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .head h1{
+            text-align: center;
+            font-size: 18px;     
+        }   
+        .container2{
+            width:100%;
+            margin:auto;
+            /* background-color: aqua; */
+            display: flex;
+            flex-direction: column;
+        }
+        .burgerss{
+            width:90%;
+            height: 500px;
+            margin:20px 0px 0px 20px;
+            /* background-color: palegreen; */
+            display: flex;
+            flex-direction: column;
+
+        }
+        .burgerpics{
+            width:100%;
+            height: 400px;
+            /* background-color: yellowgreen; */
+        }
+        .burgerpics img{
+            width:400px;
+            height: 400px;
+        }
+        .burgerpara{
+            width:100%;
+            height: 100px;
+            /* background-color: palevioletred; */
+        }
+        .box{
+            width:95%;
+            /* background-color: violet; */
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;   
+
+        }
+
+        .one{
+            width:100%;
+            height: 580px;
+            /* background-color: gray;          */
+        }
+        .one img{
+            width:100%;
+            height: 100%;
+        }
+        .two{
+            width:100%;
+            height: 550px;
+            /* background-color: blueviolet; */
+            display: flex;
+            flex-direction: column;
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+        .two1{
+            width:100%;
+            height: 220px;
+            /* background-color: pink; */
+        }
+        .two1 p{
+            font-size: 14px;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+        .two1 h1{
+            padding-bottom: 20px;
+            font-size: 24px;
+            font-family: Impact,;
+
+        }
+        .two1 span{
+            padding-bottom: 20px;
+            font-size: 14px;
+            color: grey;
+        }
+        .two2{
+            width:100%;
+            height: 300px;
+            /* background-color: red; */
+            margin-top: 10px;
+
+        }
+        .three{
+            width:100%;
+            height: 500px;;
+            /* background-color: rgb(16, 1, 16); */
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .ic1{
+            width:120px;
+            height: 100px;
+            /* background-color: white; */
+            margin-top: 0px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+        .n{
+            margin: 20px;;
+            margin-left: 30%;
+        }
+        .container4{
+            width:100%;
+            height: 2000px;
+            background-color: #FC4100;
+            display: flex;
+            flex-direction: column;
+        }
+        .bigbox{
+            width:100%;
+            height: 400px;
+            background-color: brown;
+        }
+        .bigbox img{
+            width:100%;
+            height: 100%;
+        }
+        .smallbox{
+            width:100%;
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+          
+        }
+        .smallbox1{
+            width:100%;
+            height: 400px;
+            background-color: orange;
+            /* outline: solid; */
+        }
+        .smallbox1 img{
+            width:100%;
+            height: 100%;
+        }
+        .bigback{
+            width:100%;
+            height:800px;
+            background-image: url("https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decoration-bg-3.png");
+            background-size: 100% 100%;
+         }
+         .bigbacks{
+            width: 90%;
+            height:700px;
+            margin-left:5%;
+            margin-top: 50px;
+            /* background-color: #FC4100; */
+            display: flex;
+            flex-wrap:wrap ;
+         }
+         .bigback1{
+            width: 100%;
+            height: 100px;
+            /* background-color: blanchedalmond;      */
+         }
+         
+         .bigback2{
+            width:100%;
+            height:300px;
+            /* background-color: palegreen; */
+            
+        }
+        .bigback3{
+            margin-top: 0px;;
+            width:100%;
+            height:300px;
+            /* background-color: yellow; */
+        }
+         .smallback{
+            width:100%;
+            height:700px;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+         }
+         .smallback1{
+            width:100%;
+            height:350px;
+            background-color: palegreen;
+
+         }
+         .smallback2{
+            width:100%;
+            height:350px;
+            background-color: yellow;
+
+         }
+         .whitepicup{
+            position: absolute;
+            top:100px;
+            left:-350px;
+            z-index:4;
+         }
+
+         .whitepicleft{
+            position: absolute;
+            top:720px;
+            left:-250px;
+            z-index:4;
+
+         }
+         .bbp{
+            font-weight: bold;
+            font-family: oswald;
+            color:white;
+            text-align: center;
+            font-size: 12px;;
+
+         }
+         .bbh{
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 24px;;
+            color:white;
+            margin-top: 4px;;
+            text-align: center;
+
+         }
+
+        .ppp{
+            padding:10px;
+            color:white;
+            font-size: 16px;;
+            font-weight: bold;
+        }
+        .spannn{
+            padding:10px;
+            color:grey;
+            font-size: 14px;;
+
+        }
+        
+
+         .mine{
+            width: 410px;
+            height: 300px;
+            margin-left: 20px;
+            margin-top: 10px;
+            z-index: 999;
+
+         }
+
+         .container6{
+            width:100%;
+            height:300px;
+            background-color: pink;
+
+         }
+
+
+
+
+
+
+
+
+       
+  
+          
+
+ 
+
+
+ 
+    
+    }
+
+
+    </style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <main>
+        <navbar>
+            <img class="logo" src="logo-small-inverse.png">    
+        <div class="nav1">
+            <div class="a">HOME</div>
+            <div class="a">PAGES</div>
+            <div class="a">BLOG</div>
+            <div class="a">SHOP</div>
+            <div class="a">CONTACTS</div>
+        </div>
+        <div class="nav2">
+            <i class="fa-solid fa-bag-shopping menu"></i>
+            <i class="fa-solid fa-magnifying-glass menu"></i>
+            <i class="fa-solid fa-bars menu"></i>
+        
+        </div>
+
+        </navbar>
+        <div class="container">
+           
+
+            <img class="circle1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-fill-2.svg">
+            <img class="circle2" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-fill-2.svg">
+            <img class="burger" src="parallax-img-5-copyright.png">
+
+            <img class="crown" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/crown-3.svg">
+
+
+            <img class="ul" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-lines-7.svg">
+            <img class="nl" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-lines-8.svg">
+
+            <img class="ull" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-lines-9.svg">
+            <img class="nll" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-lines-10.svg">
+
+
+            <img class="dc1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-dotted-3.svg">
+            <img class="dc2" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-dotted-3.svg">
+
+
+            <img class="sc" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-2.svg">
+            <img class="mc" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-4.svg">
+            <img class="lc" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-3.svg">
+            
+            <img class="sc1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-2.svg">
+            <img class="mc1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-4.svg">
+            <img class="lc1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decor-circle-3.svg">
+            
+
+            <div class="bg" data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" data-aos-duration="600">
+                <div class="fp">
+                <p class="p1">ABOUT US</p>
+                <h1>UNFORGETTABLE BURGERS,
+                    UNFORGETTABLE MEMORY
+                </h1>
+
+                <div class="iconlists">
+
+                    <div class="icons">
+                        <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <div class="iconp"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p></div>
+                    </div>
+
+                    <div class="icons">
+                        <div class="icon"><i class="fa-solid fa-bottle-water"></i></div>
+                        <div class="iconp"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p></div>
+                    </div>
+
+                    <div class="icons">
+                        <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+                        <div class="iconp"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p></div>
+                    </div>
+                  
+                    </div>
+                    <button type="button" class="btn">ABOUT US   <i class="fa-solid fa-arrow-right arrow"></i></button>
+                    <!-- <input type="button" class="btn" value="ABOUT US"<i class="fa-solid fa-arrow-right arrow"></i>> -->
+
+
+                <!-- <a href="https://easyeat.ancorathemes.com/our-services/" class="sc_icons_item_link">
+                </a> -->
+            </div>
+            </div>
+           
+        </div>
+
+
+
+        <div class="container1">
+            <p>OUR BURGERS</p>
+            <div class="head">
+                <h1>UNLEASH YOUR BURGER CRAVINGS WITH OUR MENU</h1>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="burgerss">
+                <div class="burgerpics"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2020/05/product-3-copyright.png"></div>
+                <div class="burgerpara"><p>CHICKEN BURGER</p><p>$165.00</p></div>
+            </div>
+
+            <div class="burgerss">
+                <div class="burgerpics"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2020/05/product-4-copyright-768x768.png"></div>
+                <div class="burgerpara"><p>BLACK BURGER</p><p><span class="grey">$99.00</span> $89.00</p></div>   
+            </div>
+
+            <div class="burgerss">
+                <div class="burgerpics"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2020/05/product-1-copyright-600x600.png"></div>
+                <div class="burgerpara"><p>FISH BURGER</p><p>$49.00</p></div>    
+            </div>
+
+            <div class="burgerss">
+                <div class="burgerpics"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2020/05/product-2-copyright-768x768.png"></div>
+                <div class="burgerpara"><p>DOUBLE BURGER</p><p>$125.00- $165.00</p></div>  
+            </div>
+        </div>
+
+        <button type="button" class="btn n">VIEW MORE<i class="fa-solid fa-arrow-right arrow"></i></button>
+       
+        <div class="container3">
+            <div class="box">
+                <div class="one"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/img-5-copyright.jpg"></div>
+                <div class="two">
+                    <div class="two1">
+                        <p>GOURMET BURGERS</p>
+                        <h1>DELICIOUS BURGERS MADE FROM THE FRESHEST INGREDIENTS</h1>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ex ipsam, pariatur, dolore aspernatur harum ab architecto dolor labore praesentium repellendus amet ipsa blanditiis delectus esse quis asperiores minima veritatis.</span>      
+                    </div>
+                    <div class="two2"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/img-4-copyright.jpg"></div>
+                </div>
+                <div class="three">
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-1-copyright.png"></div>
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-2-copyright.png"></div>
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-3-copyright.png"></div>
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-4-copyright.png"></div>
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-5-copyright.png"></div>
+                    <div class="ic1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/client-6-copyright.png"></div>
+                </div>
+                
+            </div>
+
+        </div>
+
+
+        <div class="container4">
+            <div class="bigbox">
+                <img src="https://easyeat.ancorathemes.com/wp-content/uploads/2017/05/img-6-copyright.jpg">
+            </div>
+            <div class="smallbox">
+                <div class="smallbox1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2017/05/img-10-copyright-890x664.jpg"></div>
+                <div class="smallbox1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2017/05/img-11-copyright-890x664.jpg"></div>
+                <div class="smallbox1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2017/05/img-12-copyright-890x664.jpg"></div>
+                <div class="smallbox1"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2017/05/img-13-copyright-890x664.jpg"></div>
+            </div>
+
+
+        </div>
+<!-- 
+        <div class="container5">
+            <div class="pic1"><img class="bgpic" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/decoration-bg-4.png">
+                
+                <div class="whites"><img class="whitepic" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-6-copyright.png">
+            <img class="whitepic" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-7-copyright.png">
+            <img class="whitepic" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-8-copyright.png">
+            <img class="whitepic" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-9-copyright.png">
+            <img class="whitepic up" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-10-copyright.png">
+            <img src="">
+            <img src="">
+        </div>
+            </div>
+            <div class="pic2"><img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-11-copyright.png"></div>
+            <div class="pic3"></div>
+            <img class="cir" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-fill-2.svg">
+            <img class="dcir" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-dotted-3.svg">
+        </div> -->
+
+        <div class="container5">
+
+            <div class="bigback">
+                <div class="bigbacks">
+
+                <div class="bigback1">
+                    <p class="bbp">OUR MENU</p>
+                    <h1 class="bbh">YOUR ONE-STOP BURGER SHOP</h1>
+                </div>
+                <div class="bigback2">
+                    <p class="ppp">CLASSIC JUICY CHEESEBURGER...............$12.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">MUSHROOM SWISS BURGER...............$10.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">BUFFALO CHICKEN BURGER...............$14.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">SOUTHWEST CHICKEN BURGER...............$10.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">PHILLY CHEESESTEAK BURGER...............$12.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+                </div>
+                <div class="bigback3">
+                    <p class="ppp">CLASSIC JUICY CHEESEBURGER...............$12.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">MUSHROOM SWISS BURGER...............$10.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">BUFFALO CHICKEN BURGER...............$14.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">SOUTHWEST CHICKEN BURGER...............$10.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+
+                    <p class="ppp">PHILLY CHEESESTEAK BURGER...............$12.00</p>
+                    <span class="spannn">Duis aute irure dolor in reprehenderit in voluptate velit esse.</span>
+                </div>
+
+                </div>
+                <img class="whitepicup" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-10-copyright.png">
+                <img class="whitepicmiddle" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-9-copyright.png">
+                <img class="whitepicleft" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-8-copyright.png">
+                <img class="whitepicupp" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-7-copyright.png">
+                <img class="whitepicright" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-6-copyright.png">
+            </div>
+                
+            
+            <div class="smallback">
+
+                <div class="smallback1">
+                    <img class="mine" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/parallax-img-11-copyright.png">
+                </div>
+                <div class="smallback2">
+                    <h3>Our diner</h3>
+                    <h1>We make the best burgers in town</h1>
+                    <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam.natus error sit voluptatem accusantium doloremque laudantium.</p>
+                        <p>Veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                            Nemo enim ipsam voluptatem quia voluptas.</p>
+                            <button type="button" class="btn n">VIEW MORE<i class="fa-solid fa-arrow-right arrow"></i></button>
+       
+
+                </div>
+                <!-- <img class="cir" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-fill-2.svg">
+            <img class="dcir" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-dotted-3.svg">
+
+            <img class="cir1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-fill-2.svg">
+            <img class="dcir1" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/circle-dotted-3.svg"> -->
+            </div>
+        </div>
+        
+    
+
+
+        <div class="container6">
+           <img class="co6" src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/05/img-116-copyright.jpg" />
+        </div>
+
+
+        <div class="container7">
+            <div class="letter"><p>Blog & Articles</p>
+                <h1>Latest News</h1>
+             </div>
+
+             <div class="slides">
+                <div class="slide">
+                    <img src="https://easyeat.ancorathemes.com/wp-content/uploads/2023/02/img-82-copyright-1024x764.jpg"/>
+                    <div class="content">
+                        <p>Snacks</p>
+                        <h1>WHAT IS THE DIFFERENCE BETWEEN HUMBURGER AND BURGER ?</h1>
+                        <span>April 21,2021 . 0 comments</span>
+                    </div>
+                </div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+             </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
