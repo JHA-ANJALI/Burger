@@ -11,9 +11,7 @@
 
         *{
             padding:0px;
-            margin:0px;
-            overflow-x: hidden; 
-           
+            margin:0px; 
         }
         html, body {
     overflow-x: hidden; /* Hides horizontal overflow */
@@ -24,6 +22,7 @@
     height: 100%;
 }
         main{
+            overflow-x: hidden;
             overflow: hidden;
         }
         navbar{
@@ -35,7 +34,13 @@
             /* background-image: url("decoration-bg-2.png"); */
             display:flex;
             z-index: 999;
+            transition: background-image 0.3s ease;
         }
+        .navbar.bg-image {
+  background-image: url("./decoration-bg-2.png"); /* Add background image when scrolled */
+  background-size: cover;
+  background-position: center;
+}
 
         .logo{
             height: 80px;
@@ -1485,8 +1490,30 @@
 
 
     </main>
+    
     <script>
+// Detect scroll and add background image to navbar when scrolled past viewport height
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const scrollPosition = window.scrollY;
+
+  // Check if the page is scrolled more than the height of the viewport (100vh)
+  if (scrollPosition > window.innerHeight) {
+    navbar.classList.add('bg-image'); // Add background image when scrolled
+  } else {
+    navbar.classList.remove('bg-image'); // Remove background image when scrolling up
+  }
+});
+
+
         AOS.init();
+
+ 
+
+
+
+
       </script>
+ 
 </body>
 </html>
